@@ -1,0 +1,31 @@
+.mainHead{
+    font-size: 30px;
+    font-weight:bold;
+    text-align: center;
+    align-items: center;
+    color: white;
+    
+    
+    margin-left: 14em;
+}
+.main{
+    /*background-color: #1D2228
+    !important;*/
+    background-color: #1D2228 !important;
+    height:60px !important;
+}
+
+.secondary{
+    /*background-color: #AAA;
+    background-color: #1D2228 !important;*/
+    background-color: #8c949492 !important;
+    
+    
+    height:42px !important;
+}
+mat-icon,.color{
+    color: white !important;
+}
+.color{
+    font-size: 20px;;
+}

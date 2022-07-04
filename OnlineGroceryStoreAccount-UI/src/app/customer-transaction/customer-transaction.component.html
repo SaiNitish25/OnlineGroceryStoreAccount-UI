@@ -1,0 +1,72 @@
+<div class="container">
+
+    <div class="row center-xs mt-1">
+        <div class="col-xs-12"> 
+            <h2>{{CustomerName}} Transactions</h2>
+        </div>
+        
+    </div>
+
+    <div class="row center-xs mt-1">
+        <div class="col-xs-12"> 
+            <button mat-raised-button *ngIf="!isBalanceClicked" (click)="getBalance()" color="primary">Balance</button>
+        </div>
+        
+    </div>
+    <div class="row center-xs mt-1" *ngIf="isBalanceClicked">
+        <div class="col-xs-12">
+            
+                <mat-label class="message">{{message}}{{balanceAmount}}</mat-label>
+            
+        </div>
+    </div>
+    <div class="row center-xs" *ngIf="isBalanceClicked">
+        <div class="col-xs-12"> 
+            <button mat-raised-button class="mt-1" *ngIf="!isClicked" (click)="getTransactions()" color="primary">Show Transactions</button>
+        </div>
+
+    </div>
+
+    <div class="mt-1 mat-elevation-z8" *ngIf="isClicked">
+        <table mat-table matSort [dataSource]="dataSource" class="">
+            <ng-container matColumnDef="date">
+              <th mat-header-cell *matHeaderCellDef >Date  </th>
+              <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="trasnactionFor">
+                <th mat-header-cell *matHeaderCellDef >Transaction Reason </th>
+                <td mat-cell *matCellDef="let element"> {{element.trasnactionFor}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="debit">
+                <th mat-header-cell *matHeaderCellDef >Debit </th>
+                <td mat-cell *matCellDef="let element"> {{element.debit}}  </td>
+              </ng-container>
+
+              <ng-container matColumnDef="credit">
+                <th mat-header-cell *matHeaderCellDef >Credit </th>
+                <td mat-cell *matCellDef="let element"> {{element.credit}}  </td>
+              </ng-container>
+
+              <ng-container matColumnDef="balanceHistory">
+                <th mat-header-cell *matHeaderCellDef >Balanace Amount </th>
+                <td mat-cell *matCellDef="let element"> {{element.balanceHistory}}  </td>
+              </ng-container>
+              
+              
+
+            
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+
+
+    </div>
+
+                
+        
+    
+</div>

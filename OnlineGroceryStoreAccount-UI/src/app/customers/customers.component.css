@@ -1,0 +1,21 @@
+.subhead{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+table{
+    width: 100%;
+}
+.searchInput{
+    
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 8px 16px;
+    border-radius:3px;
+}
+.searchInput:active{
+    border: 1px solid #bbb;
+}
+.searchInput:focus{
+    border: 1px solid #AAA;
+}
